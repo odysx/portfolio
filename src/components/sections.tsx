@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   site,
   projects,
@@ -9,6 +8,7 @@ import {
 } from "@/lib/content";
 import { Icon } from "./Icon";
 import { BentoGrid, BentoCard } from "./bento";
+import { BrowserPreview } from "./browser-preview";
 import { DisplayText } from "./display-text";
 import { Reveal } from "./reveal";
 
@@ -55,14 +55,8 @@ export function Work() {
         {projects.map((p) => (
           <BentoCard key={p.slug} className="col-span-2 md:col-span-4">
             <div className="group grid gap-4 md:grid-cols-[1.1fr_1fr]">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-line">
-                <Image
-                  src={p.cover}
-                  alt={`Portada del proyecto ${p.name}`}
-                  fill
-                  sizes="(max-width: 768px) 92vw, 420px"
-                  className="object-cover grayscale transition-[filter] duration-500 group-hover:grayscale-0"
-                />
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <BrowserPreview url={p.url} />
                 <span className="label absolute left-3 top-3 rounded-full bg-accent px-2 py-1 !text-white">
                   {p.year}
                 </span>
@@ -79,23 +73,6 @@ export function Work() {
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {p.stack.map((s) => (
                     <Pill key={s}>{s}</Pill>
-                  ))}
-                </div>
-
-                <div className="mt-3 flex gap-1.5">
-                  {p.gallery.slice(1).map((g) => (
-                    <span
-                      key={g.src}
-                      className="relative h-11 w-11 overflow-hidden rounded-lg border border-line"
-                    >
-                      <Image
-                        src={g.src}
-                        alt={g.alt}
-                        fill
-                        sizes="44px"
-                        className="object-cover grayscale"
-                      />
-                    </span>
                   ))}
                 </div>
 

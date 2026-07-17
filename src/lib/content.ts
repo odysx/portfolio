@@ -6,8 +6,6 @@ export type Project = {
   year: string;
   stack: string[];
   url: string;
-  cover: string;
-  gallery: { src: string; alt: string }[];
   featured?: boolean;
 };
 
@@ -93,13 +91,6 @@ export const projects: Project[] = [
     year: "2025",
     stack: ["Astro", "TypeScript", "CSS"],
     url: "https://www.atodocolorpeluqueria.es",
-    cover: "/projects/atodocolor/salon.webp",
-    gallery: [
-      { src: "/projects/atodocolor/salon.webp", alt: "Interior del salón A Todo Color" },
-      { src: "/projects/atodocolor/balayage.webp", alt: "Trabajo de balayage" },
-      { src: "/projects/atodocolor/mechas.webp", alt: "Trabajo de mechas" },
-      { src: "/projects/atodocolor/corte.webp", alt: "Trabajo de corte" },
-    ],
     featured: true,
   },
 ];

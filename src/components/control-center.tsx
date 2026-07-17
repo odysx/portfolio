@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { site, featuredProject, projects } from "@/lib/content";
 import { Icon } from "./Icon";
@@ -89,14 +88,8 @@ export function ControlCenter() {
           href="#work"
           className="mt-2.5 flex items-center gap-3 rounded-[18px] border border-line bg-surface-2 p-3.5 transition-colors hover:border-line-strong sm:mt-3"
         >
-          <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl">
-            <Image
-              src={featuredProject.cover}
-              alt={featuredProject.name}
-              fill
-              sizes="48px"
-              className="object-cover grayscale"
-            />
+          <span className="font-doto flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-line-strong text-lg font-bold">
+            {featuredProject.name.charAt(0)}
           </span>
           <span className="min-w-0 flex-1">
             <span className="label flex items-center justify-between">
