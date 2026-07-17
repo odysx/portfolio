@@ -34,7 +34,7 @@ export const site = {
   location: "España",
   tagline: "Desarrollo de aplicaciones, webs y productos digitales a medida.",
   about:
-    "Soy Arturo, desarrollador full-stack. Diseño y construyo productos digitales de principio a fin: interfaces que se disfrutan y sistemas que aguantan por debajo. Menos ruido y menos plantillas, más producto terminado.",
+    "Soy Arturo, desarrollador full-stack. Diseño y desarrollo aplicaciones y sitios web completos, desde la interfaz hasta la base de datos, cuidando tanto la experiencia de usuario como la calidad del código. Trabajo directamente con cada cliente para entender sus necesidades y entregar soluciones a medida, sin plantillas genéricas.",
 };
 
 export const stats: Stat[] = [
