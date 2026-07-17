@@ -6,6 +6,7 @@ export type Project = {
   year: string;
   stack: string[];
   url: string;
+  icon: string;
   featured?: boolean;
 };
 
@@ -91,6 +92,7 @@ export const projects: Project[] = [
     year: "2026",
     stack: ["Astro", "TypeScript", "CSS"],
     url: "https://www.atodocolorpeluqueria.es",
+    icon: "scissors",
     featured: true,
   },
 ];
