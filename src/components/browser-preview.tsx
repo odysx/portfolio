@@ -1,4 +1,4 @@
-function cleanHost(url: string) {
+export function cleanHost(url: string) {
   return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
 }
 

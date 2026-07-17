@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { site, featuredProject, projects } from "@/lib/content";
+import { cleanHost } from "./browser-preview";
 import { Icon } from "./Icon";
 import { DisplayText } from "./display-text";
 
@@ -92,9 +93,11 @@ export function ControlCenter() {
             <Icon name={featuredProject.icon} size={20} />
           </span>
           <span className="min-w-0 flex-1">
-            <span className="label flex items-center justify-between">
-              <span className="text-accent">Destacado</span>
-              <span>01 / {String(projects.length).padStart(2, "0")}</span>
+            <span className="label flex items-center justify-between gap-2">
+              <span className="truncate text-accent">Proyecto destacado</span>
+              <span className="shrink-0">
+                01 / {String(projects.length).padStart(2, "0")}
+              </span>
             </span>
             <span className="mt-0.5 flex items-center justify-between gap-2">
               <span className="font-doto truncate text-lg font-bold tracking-wide">
@@ -102,8 +105,13 @@ export function ControlCenter() {
               </span>
               <Icon name="arrowRight" size={18} className="shrink-0 text-accent" />
             </span>
-            <span className="mt-2 block h-[3px] overflow-hidden rounded-full bg-line">
-              <span className="block h-full w-[38%] bg-accent" />
+            <span className="mt-1 flex items-center justify-between gap-2">
+              <span className="truncate text-xs text-muted">
+                {featuredProject.tagline}
+              </span>
+              <span className="label shrink-0 normal-case tracking-normal text-muted">
+                {cleanHost(featuredProject.url)}
+              </span>
             </span>
           </span>
         </a>
