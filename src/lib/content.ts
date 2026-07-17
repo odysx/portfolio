@@ -1,0 +1,108 @@
+export type Project = {
+  slug: string;
+  name: string;
+  tagline: string;
+  description: string;
+  year: string;
+  stack: string[];
+  url: string;
+  cover: string;
+  gallery: { src: string; alt: string }[];
+  featured?: boolean;
+};
+
+export type Service = {
+  code: string;
+  title: string;
+  description: string;
+  icon: string;
+};
+
+export type Stat = { value: string; label: string };
+
+// --- Datos de contacto: sustituir aquí cuando estén disponibles ---
+export const contact = {
+  // Número en formato internacional sin signos, p. ej. "34600111222". Vacío = pendiente.
+  whatsapp: "",
+  email: "", // p. ej. "arturo@dominio.com". Vacío = pendiente.
+  github: "", // p. ej. "https://github.com/usuario"
+  linkedin: "",
+};
+
+export const site = {
+  name: "Arturo",
+  role: "Full-Stack Developer",
+  available: true,
+  location: "España",
+  tagline: "Desarrollo de aplicaciones, webs y productos digitales a medida.",
+  about:
+    "Soy Arturo, desarrollador full-stack. Diseño y construyo productos digitales de principio a fin: interfaces que se disfrutan y sistemas que aguantan por debajo. Menos ruido y menos plantillas, más producto terminado.",
+};
+
+export const stats: Stat[] = [
+  { value: "FULL", label: "Stack" },
+  { value: "100%", label: "A medida" },
+  { value: "0", label: "Plantillas" },
+  { value: "1:1", label: "Trato directo" },
+];
+
+export const stack: { group: string; items: string[] }[] = [
+  { group: "Frontend", items: ["TypeScript", "React", "Next.js", "Astro", "Tailwind"] },
+  { group: "Backend", items: ["Node.js", "PostgreSQL", "APIs REST"] },
+  { group: "Tooling", items: ["Git", "Vite", "Vercel"] },
+];
+
+export const services: Service[] = [
+  {
+    code: "01",
+    title: "Webs a medida",
+    description:
+      "Sitios rápidos, cuidados y pensados para convertir. Nada de plantillas recicladas.",
+    icon: "globe",
+  },
+  {
+    code: "02",
+    title: "Aplicaciones",
+    description:
+      "Apps y paneles a medida, del prototipo funcional al producto en producción.",
+    icon: "layout",
+  },
+  {
+    code: "03",
+    title: "Full-stack",
+    description:
+      "Del frontend al backend y la base de datos, todo bajo un mismo techo.",
+    icon: "stack",
+  },
+  {
+    code: "04",
+    title: "Y otras cosas",
+    description:
+      "Automatizaciones, integraciones y ese detalle que ni sabías que necesitabas.",
+    icon: "sparkles",
+  },
+];
+
+export const projects: Project[] = [
+  {
+    slug: "atodocolor",
+    name: "A Todo Color",
+    tagline: "Peluquería · Cartagena",
+    description:
+      "Web completa para una peluquería de Cartagena: servicios, galería de trabajos, reseñas y ubicación. Rápida, cuidada y fácil de mantener.",
+    year: "2025",
+    stack: ["Astro", "TypeScript", "CSS"],
+    url: "https://www.atodocolorpeluqueria.es",
+    cover: "/projects/atodocolor/salon.webp",
+    gallery: [
+      { src: "/projects/atodocolor/salon.webp", alt: "Interior del salón A Todo Color" },
+      { src: "/projects/atodocolor/balayage.webp", alt: "Trabajo de balayage" },
+      { src: "/projects/atodocolor/mechas.webp", alt: "Trabajo de mechas" },
+      { src: "/projects/atodocolor/corte.webp", alt: "Trabajo de corte" },
+    ],
+    featured: true,
+  },
+];
+
+export const featuredProject =
+  projects.find((p) => p.featured) ?? projects[0];

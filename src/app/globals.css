@@ -1,26 +1,96 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #e7e7e5;
+  --surface: #f3f3f1;
+  --surface-2: #dcdcda;
+  --fg: #0a0a0a;
+  --muted: #6b6b68;
+  --line: #c9c9c6;
+  --line-strong: #a9a9a5;
+  --invert-bg: #0a0a0a;
+  --invert-fg: #e7e7e5;
+  --accent: #d71921;
+  --dot: rgba(10, 10, 10, 0.09);
+}
+
+.dark {
+  --bg: #0b0b0b;
+  --surface: #161616;
+  --surface-2: #1f1f1f;
+  --fg: #e7e7e5;
+  --muted: #8a8a87;
+  --line: #2a2a2a;
+  --line-strong: #3a3a3a;
+  --invert-bg: #e7e7e5;
+  --invert-fg: #0a0a0a;
+  --accent: #ff3b30;
+  --dot: rgba(231, 231, 229, 0.08);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-invert-bg: var(--invert-bg);
+  --color-invert-fg: var(--invert-fg);
+  --color-accent: var(--accent);
+
+  --font-doto: var(--doto), ui-monospace, monospace;
+  --font-mono: var(--space-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--space-mono), ui-monospace, monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@utility dot-grid {
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 15px 15px;
+}
+
+@utility label {
+  font-family: var(--space-mono), ui-monospace, monospace;
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@utility display {
+  font-family: var(--doto), ui-monospace, monospace;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 0.95;
 }
