@@ -88,7 +88,7 @@ export const projects: Project[] = [
     tagline: "Peluquería · Cartagena",
     description:
       "Web completa para una peluquería de Cartagena: servicios, galería de trabajos, reseñas y ubicación. Rápida, cuidada y fácil de mantener.",
-    year: "2025",
+    year: "2026",
     stack: ["Astro", "TypeScript", "CSS"],
     url: "https://www.atodocolorpeluqueria.es",
     featured: true,
