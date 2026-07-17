@@ -23,9 +23,17 @@ function SectionHeader({
 }) {
   return (
     <div className="mb-4 flex items-baseline justify-between border-b border-dashed border-line-strong pb-2">
-      <DisplayText text={title} className="text-2xl sm:text-3xl" />
+      <span className="flex items-baseline">
+        <DisplayText text={title} className="text-2xl sm:text-3xl" />
+        <span
+          aria-hidden="true"
+          className="font-doto text-2xl font-bold text-accent sm:text-3xl"
+        >
+          .
+        </span>
+      </span>
       <span className="label">
-        {code} / {label}
+        <span className="text-accent">{code}</span> / {label}
       </span>
     </div>
   );
@@ -55,7 +63,7 @@ export function Work() {
                   sizes="(max-width: 768px) 92vw, 420px"
                   className="object-cover grayscale transition-[filter] duration-500 group-hover:grayscale-0"
                 />
-                <span className="label absolute left-3 top-3 rounded-full bg-invert-bg/90 px-2 py-1 text-invert-fg">
+                <span className="label absolute left-3 top-3 rounded-full bg-accent px-2 py-1 !text-white">
                   {p.year}
                 </span>
               </div>
@@ -158,7 +166,7 @@ export function Services() {
               <span className="flex h-9 w-9 items-center justify-center rounded-full border border-line-strong">
                 <Icon name={s.icon} size={18} />
               </span>
-              <span className="font-doto text-lg font-bold tracking-wider text-muted">
+              <span className="font-doto text-lg font-bold tracking-wider text-accent">
                 {s.code}
               </span>
             </div>
@@ -180,15 +188,23 @@ function ContactChannel({
   label,
   value,
   href,
+  accent = false,
 }: {
   icon: string;
   label: string;
   value: string;
   href?: string;
+  accent?: boolean;
 }) {
   const inner = (
     <>
-      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-invert-fg/25">
+      <span
+        className={`flex h-10 w-10 items-center justify-center rounded-full ${
+          accent
+            ? "bg-accent text-white"
+            : "border border-invert-fg/25"
+        }`}
+      >
         <Icon name={icon} size={18} />
       </span>
       <span className="min-w-0 flex-1 leading-tight">
@@ -226,7 +242,7 @@ export function Contact() {
     <section id="contact" className="mx-auto max-w-3xl scroll-mt-14 px-4 py-8">
       <SectionHeader code="04" label="Contact" title="HABLEMOS" />
       <Reveal className="rounded-[26px] bg-invert-bg p-5 text-invert-fg sm:p-7">
-        <p className="label text-invert-fg/60">¿Tienes algo en mente?</p>
+        <p className="label !text-accent">¿Tienes algo en mente?</p>
         <p className="mt-2 max-w-md text-[15px] leading-relaxed">
           {site.tagline} Cuéntame qué necesitas y le damos forma.
         </p>
@@ -236,6 +252,7 @@ export function Contact() {
             label="WhatsApp"
             value={contact.whatsapp || "Número pendiente"}
             href={wa}
+            accent
           />
           <ContactChannel
             icon="mail"

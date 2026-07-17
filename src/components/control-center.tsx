@@ -30,12 +30,12 @@ const tiles: Tile[] = [
 const tileBase =
   "group flex items-center gap-2.5 rounded-[18px] p-3.5 transition-colors";
 const tileStyles: Record<Tile["variant"], string> = {
-  on: "bg-invert-bg text-invert-fg",
+  on: "bg-accent text-white",
   default: "bg-surface-2 border border-line hover:border-line-strong",
   accent: "bg-surface-2 border border-line hover:border-line-strong",
 };
 const circleStyles: Record<Tile["variant"], string> = {
-  on: "bg-invert-fg text-invert-bg",
+  on: "bg-white text-accent",
   default: "border border-line-strong text-fg",
   accent: "bg-accent text-white border border-accent",
 };
@@ -56,10 +56,18 @@ export function ControlCenter() {
 
         <div className="mb-5 flex items-end justify-between px-1">
           <div>
-            <DisplayText
-              text={site.name.toUpperCase()}
-              className="text-5xl sm:text-6xl"
-            />
+            <span className="flex items-end">
+              <DisplayText
+                text={site.name.toUpperCase()}
+                className="text-5xl sm:text-6xl"
+              />
+              <span
+                aria-hidden="true"
+                className="font-doto text-5xl font-bold leading-none text-accent sm:text-6xl"
+              >
+                .
+              </span>
+            </span>
             <p className="label mt-2">{site.role}</p>
           </div>
           <span className="label hidden sm:block">Portfolio / 2026</span>
@@ -100,14 +108,14 @@ export function ControlCenter() {
           </span>
           <span className="min-w-0 flex-1">
             <span className="label flex items-center justify-between">
-              <span>Now Featured</span>
+              <span className="text-accent">Now Featured</span>
               <span>01 / {String(projects.length).padStart(2, "0")}</span>
             </span>
             <span className="mt-0.5 flex items-center justify-between gap-2">
               <span className="font-doto truncate text-lg font-bold tracking-wide">
                 {featuredProject.name.toUpperCase()}
               </span>
-              <Icon name="arrowRight" size={18} className="shrink-0" />
+              <Icon name="arrowRight" size={18} className="shrink-0 text-accent" />
             </span>
             <span className="mt-2 block h-[3px] overflow-hidden rounded-full bg-line">
               <span className="block h-full w-[38%] bg-accent" />
