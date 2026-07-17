@@ -29,7 +29,7 @@ export const contact = {
 
 export const site = {
   name: "Arturo",
-  role: "Full-Stack Developer",
+  role: "Desarrollador Full-Stack",
   available: true,
   location: "España",
   tagline: "Desarrollo de aplicaciones, webs y productos digitales a medida.",
@@ -47,7 +47,7 @@ export const stats: Stat[] = [
 export const stack: { group: string; items: string[] }[] = [
   { group: "Frontend", items: ["TypeScript", "React", "Next.js", "Astro", "Tailwind"] },
   { group: "Backend", items: ["Node.js", "PostgreSQL", "APIs REST"] },
-  { group: "Tooling", items: ["Git", "Vite", "Vercel"] },
+  { group: "Herramientas", items: ["Git", "Vite", "Vercel"] },
 ];
 
 export const services: Service[] = [

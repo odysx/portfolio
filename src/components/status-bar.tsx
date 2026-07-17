@@ -33,7 +33,7 @@ export function StatusBar() {
         <div className="flex items-center gap-4">
           {site.available && (
             <span className="label flex items-center gap-1.5">
-              Available
+              Disponible
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
                 <span className="inline-flex h-2 w-2 rounded-full bg-accent" />

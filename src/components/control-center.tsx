@@ -14,16 +14,16 @@ type Tile = {
 };
 
 const tiles: Tile[] = [
-  { href: "#about", title: "About", state: "ON", icon: "user", variant: "on" },
+  { href: "#about", title: "Sobre mí", state: "ACTIVO", icon: "user", variant: "on" },
   {
     href: "#work",
-    title: "Work",
+    title: "Proyectos",
     state: `${String(projects.length).padStart(2, "0")}`,
     icon: "folder",
     variant: "default",
   },
-  { href: "#services", title: "Services", state: "", icon: "stack", variant: "default" },
-  { href: "#contact", title: "Contact", state: "", icon: "whatsapp", variant: "accent" },
+  { href: "#services", title: "Servicios", state: "", icon: "stack", variant: "default" },
+  { href: "#contact", title: "Contacto", state: "", icon: "whatsapp", variant: "accent" },
 ];
 
 const tileBase =
@@ -61,7 +61,7 @@ export function ControlCenter() {
             />
             <p className="label mt-2">{site.role}</p>
           </div>
-          <span className="label hidden sm:block">Portfolio / 2026</span>
+          <span className="label hidden sm:block">Portafolio / 2026</span>
         </div>
 
         <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
@@ -93,7 +93,7 @@ export function ControlCenter() {
           </span>
           <span className="min-w-0 flex-1">
             <span className="label flex items-center justify-between">
-              <span className="text-accent">Now Featured</span>
+              <span className="text-accent">Destacado</span>
               <span>01 / {String(projects.length).padStart(2, "0")}</span>
             </span>
             <span className="mt-0.5 flex items-center justify-between gap-2">

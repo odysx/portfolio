@@ -16,11 +16,11 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Arturo — Full-Stack Developer",
+  title: "Arturo — Desarrollador Full-Stack",
   description:
     "Desarrollo de aplicaciones, webs y productos digitales a medida. Del frontend al backend, todo bajo un mismo techo.",
   openGraph: {
-    title: "Arturo — Full-Stack Developer",
+    title: "Arturo — Desarrollador Full-Stack",
     description:
       "Desarrollo de aplicaciones, webs y productos digitales a medida.",
     type: "website",

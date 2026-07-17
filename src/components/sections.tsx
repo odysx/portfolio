@@ -50,7 +50,7 @@ function Pill({ children }: { children: React.ReactNode }) {
 export function Work() {
   return (
     <section id="work" className="mx-auto max-w-3xl scroll-mt-14 px-4 py-8">
-      <SectionHeader code="01" label="Work" title="PROYECTOS" />
+      <SectionHeader code="01" label="Proyectos" title="PROYECTOS" />
       <BentoGrid>
         {projects.map((p) => (
           <BentoCard key={p.slug} className="col-span-2 md:col-span-4">
@@ -96,7 +96,7 @@ export function Work() {
 export function About() {
   return (
     <section id="about" className="mx-auto max-w-3xl scroll-mt-14 px-4 py-8">
-      <SectionHeader code="02" label="About" title="SOBRE MÍ" />
+      <SectionHeader code="02" label="Sobre mí" title="SOBRE MÍ" />
       <BentoGrid>
         <BentoCard variant="invert" className="col-span-2 md:col-span-2">
           <Icon name="user" size={22} />
@@ -135,7 +135,7 @@ export function About() {
 export function Services() {
   return (
     <section id="services" className="mx-auto max-w-3xl scroll-mt-14 px-4 py-8">
-      <SectionHeader code="03" label="Services" title="SERVICIOS" />
+      <SectionHeader code="03" label="Servicios" title="SERVICIOS" />
       <BentoGrid>
         {services.map((s, i) => (
           <BentoCard key={s.code} className="col-span-1 md:col-span-2" delay={i * 0.05}>
@@ -217,7 +217,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="mx-auto max-w-3xl scroll-mt-14 px-4 py-8">
-      <SectionHeader code="04" label="Contact" title="HABLEMOS" />
+      <SectionHeader code="04" label="Contacto" title="HABLEMOS" />
       <Reveal className="rounded-[26px] bg-invert-bg p-5 text-invert-fg sm:p-7">
         <p className="label !text-accent">¿Tienes algo en mente?</p>
         <p className="mt-2 max-w-md text-[15px] leading-relaxed">
