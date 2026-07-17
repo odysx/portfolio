@@ -30,12 +30,12 @@ const tiles: Tile[] = [
 const tileBase =
   "group flex items-center gap-2.5 rounded-[18px] p-3.5 transition-colors";
 const tileStyles: Record<Tile["variant"], string> = {
-  on: "bg-accent text-white",
+  on: "bg-invert-bg text-invert-fg",
   default: "bg-surface-2 border border-line hover:border-line-strong",
   accent: "bg-surface-2 border border-line hover:border-line-strong",
 };
 const circleStyles: Record<Tile["variant"], string> = {
-  on: "bg-white text-accent",
+  on: "bg-invert-fg text-invert-bg",
   default: "border border-line-strong text-fg",
   accent: "bg-accent text-white border border-accent",
 };
@@ -56,18 +56,10 @@ export function ControlCenter() {
 
         <div className="mb-5 flex items-end justify-between px-1">
           <div>
-            <span className="flex items-end">
-              <DisplayText
-                text={site.name.toUpperCase()}
-                className="text-5xl sm:text-6xl"
-              />
-              <span
-                aria-hidden="true"
-                className="font-doto text-5xl font-bold leading-none text-accent sm:text-6xl"
-              >
-                .
-              </span>
-            </span>
+            <DisplayText
+              text={site.name.toUpperCase()}
+              className="text-5xl sm:text-6xl"
+            />
             <p className="label mt-2">{site.role}</p>
           </div>
           <span className="label hidden sm:block">Portfolio / 2026</span>
