@@ -74,9 +74,9 @@ export const services: Service[] = [
   },
   {
     code: "04",
-    title: "Y otras cosas",
+    title: "Integraciones",
     description:
-      "Automatizaciones, integraciones y ese detalle que ni sabías que necesitabas.",
+      "Automatizaciones y conexiones con APIs, pagos y otras herramientas de terceros.",
     icon: "sparkles",
   },
 ];
