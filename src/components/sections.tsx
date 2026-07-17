@@ -56,7 +56,7 @@ export function Work() {
           <BentoCard key={p.slug} className="col-span-2 md:col-span-4">
             <div className="group grid gap-4 md:grid-cols-[1.1fr_1fr]">
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-                <BrowserPreview url={p.url} />
+                <BrowserPreview url={p.url} brand={p.name} />
                 <span className="label absolute left-3 top-3 rounded-full bg-accent px-2 py-1 !text-white">
                   {p.year}
                 </span>
